@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/jobbtn"
+        android:title="JOB"
+        android:icon="@drawable/img"
+        />
+    <item
+        android:id="@+id/MyAppliesbtn"
+        android:title="My Applies"
+        android:icon="@drawable/img_3"
+        />
+    <item
+        android:id="@+id/inboxbtn"
+        android:title="Inbox"
+        android:icon="@drawable/img_2"
+        />
+    <item
+        android:id="@+id/profilebtn"
+        android:title="Profile"
+        android:icon="@drawable/img_1"
+        />
+
+
+
+
+
+
+</menu>
