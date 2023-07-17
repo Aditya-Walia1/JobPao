@@ -40,19 +40,22 @@ public class Register extends AppCompatActivity {
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(Register.this , LoginPage.class);
+                Intent intent = new Intent(Register.this, LoginPage.class);
+                startActivity(intent);
             }
-
-
-
-
         });
+
+
+
+
+
+
 
          mRegisterButton.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
 
-                 final String email = mEmail.getText().toString().trim();
+                 final String email = mEmail.toString().trim();
                  String password = mPassword.getText().toString().trim();
                  final String fullName = mFullName.getText().toString();
                  final String phoneNumber = mPhone.getText().toString();
