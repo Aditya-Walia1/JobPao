@@ -15,7 +15,7 @@ public class spash_screen extends AppCompatActivity {
         setContentView(R.layout.activity_spash_screen);
 
         Intent iHome;
-        iHome = new Intent(spash_screen.this,MainActivity.class);
+        iHome = new Intent(spash_screen.this, Register.class);
 
 
         new Handler().postDelayed(new Runnable() {
