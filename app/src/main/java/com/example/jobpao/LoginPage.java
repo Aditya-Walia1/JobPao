@@ -22,14 +22,11 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginPage extends AppCompatActivity {
 
-    EditText memail,mpassword;
+    EditText memail, mpassword;
     Button mLoginBtn;
     TextView mcreateBtn;
     ProgressBar progressBar;
-
     FirebaseAuth fAuth;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,15 +39,13 @@ public class LoginPage extends AppCompatActivity {
         mcreateBtn = findViewById(R.id.createText);
         progressBar = findViewById(R.id.progressBar);
 
+        fAuth = FirebaseAuth.getInstance();
 
         mcreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), Register.class));
             }
-
-
-
         });
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
@@ -74,23 +69,20 @@ public class LoginPage extends AppCompatActivity {
 
                 progressBar.setVisibility(View.VISIBLE);
 
-                fAuth.createUserWithEmailAndPassword(email, password)
+                fAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(LoginPage.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
+                                progressBar.setVisibility(View.GONE);
+
                                 if (task.isSuccessful()) {
-                                    // User registration successful
-                                    Toast.makeText(LoginPage.this, "Registration Successful", Toast.LENGTH_SHORT).show();
-                                    // You can add code here to navigate to another activity or perform other actions
+                                    // User login successful
+                                    Toast.makeText(LoginPage.this, "Login Successful", Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(getApplicationContext(), home.class));
-
                                 } else {
-                                    // User registration failed
-                                    Toast.makeText(LoginPage.this, "Registration Failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    // User login failed
+                                    Toast.makeText(LoginPage.this, "Login Failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
-
-                               progressBar.setVisibility(View.GONE);
-
                             }
                         });
             }
