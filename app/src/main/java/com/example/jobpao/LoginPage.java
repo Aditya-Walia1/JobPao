@@ -82,12 +82,15 @@ public class LoginPage extends AppCompatActivity {
                                     // User registration successful
                                     Toast.makeText(LoginPage.this, "Registration Successful", Toast.LENGTH_SHORT).show();
                                     // You can add code here to navigate to another activity or perform other actions
+                                    startActivity(new Intent(getApplicationContext(), home.class));
+
                                 } else {
                                     // User registration failed
                                     Toast.makeText(LoginPage.this, "Registration Failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
 
                                progressBar.setVisibility(View.GONE);
+
                             }
                         });
             }

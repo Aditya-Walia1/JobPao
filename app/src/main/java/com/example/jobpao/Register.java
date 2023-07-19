@@ -40,8 +40,8 @@ public class Register extends AppCompatActivity {
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Register.this, LoginPage.class);
-                startActivity(intent);
+                startActivity(new Intent(getApplicationContext(), LoginPage.class));
+
             }
         });
 
@@ -77,6 +77,7 @@ public class Register extends AppCompatActivity {
                  }
 
                  mProgressBar.setVisibility(View.VISIBLE);
+                 startActivity(new Intent(getApplicationContext(), home.class));
 
              }
          });
