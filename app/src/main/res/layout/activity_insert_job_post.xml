@@ -36,7 +36,7 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="55dp"
                 android:id="@+id/jobTitle"
                 android:hint="Enter job title" />
 
@@ -50,7 +50,7 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="55dp"
                 android:id="@+id/jobDescription"
                 android:hint="Enter job description" />
 
@@ -64,7 +64,7 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="55dp"
                 android:id="@+id/jobSkills"
                 android:hint="Enter required skills" />
 
@@ -78,14 +78,14 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="55dp"
                 android:id="@+id/jobSalary"
                 android:hint="Enter salary" />
 
             <!-- Post Job Button -->
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="58dp"
                 android:id="@+id/btnjobPost"
                 android:text="Post Job"
                 android:textSize="18sp"
